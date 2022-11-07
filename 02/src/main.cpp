@@ -1,5 +1,6 @@
+#include <string>
+
 import <iostream>;
-import <string>;
 
 import mainmodule;
 
@@ -13,6 +14,6 @@ int main() {
     // Initializing the string b.
     b = "Here is a string";
 
-    mainmodule::printvar(a);
-    mainmodule::printvar(b);
+    mainmodule::printvar1(a);
+    //mainmodule::printvar2(b);
 }
