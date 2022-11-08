@@ -25,7 +25,7 @@ if (CMAKE_CXX_COMPILER_ID STREQUAL "GNU")
   #add_library(m_mainmodule_impl OBJECT src/m_mainmodule_impl.cc)
   #add_library(m_mainmodule STATIC $<TARGET_OBJECTS:m_mainmodule_impl> src/m_mainmodule.cc)
 
-  add_executable(${PROJECT_NAME} src/main.cpp) #src/m_mainmodule.cc src/m_mainmodule_impl.cc )
+  add_executable(${PROJECT_NAME} src/main.cpp src/car.cpp) #src/m_mainmodule.cc src/m_mainmodule_impl.cc )
   #target_link_libraries(${PROJECT_NAME} m_mainmodule)
 
 elseif (NOT CMAKE_CXX_COMPILER_ID STREQUAL "GNU")

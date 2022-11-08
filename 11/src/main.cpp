@@ -1,46 +1,34 @@
 #include <iostream>
 #include <string>
+#include <vector>
+#include "car.h"
 using std::string;
 using std::cout;
+using std::vector;
 
-class Car {
-  public:
-    void PrintCarData() 
-    {
-        cout << "The distance that the " << color << " car " << number << " has traveled is: " << distance << "\n";
-    }
-
-    void IncrementDistance(int delta) 
-    {
-        distance += delta;
-    }
+int main() {
+    // Create an empty vector of pointers to Cars 
+    // and a null pointer to a car.
+    vector<Car*> car_vect;
+    Car* cp = nullptr;
     
-    // Adding a constructor here:
-    Car(string c, int n) 
-    {
-        // Setting the class attributes with
-        // The values passed into the constructor.
-        color = c;
-        number = n;
+    // The vector of colors for the cars:
+    vector<string> colors {"red", "blue", "green"};
+
+    // Create 100 cars with different colors and 
+    // push pointers to each of those cars into the vector.
+    for (int i=0; i < 100; i++) {;
+        cp = new Car(colors[i%3], i+1);
+        car_vect.push_back(cp);
     }
-    
-    string color;
-    int distance = 0;
-    int number;
-};
 
-int main() 
-{
-    // Create class instances for each car.
-    Car car_1 = Car("green", 1);
-    Car car_2 = Car("red", 2);
-    Car car_3 = Car("blue", 3);
+    // Move each car forward by 1.
+    for (Car* cp: car_vect) {
+        cp->IncrementDistance();
+    }
 
-    // Increment car_1's position by 1.
-    car_3.IncrementDistance(2000);
-
-    // Print out the position and color of each car.
-    car_1.PrintCarData();
-    car_2.PrintCarData();
-    car_3.PrintCarData();
+    // Print data about each car.
+    for (Car* cp: car_vect) {
+        cp->PrintCarData();
+    }
 }
