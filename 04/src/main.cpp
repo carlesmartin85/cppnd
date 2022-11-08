@@ -13,5 +13,5 @@ int main()
                                         {0, 1, 0, 0, 0, 0},
                                         {0, 0, 0, 0, 1, 0}};
 
-    mainmodule::printvar(board);
+    mainmodule::printboard(board);
 }
