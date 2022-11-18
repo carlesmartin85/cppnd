@@ -4,7 +4,7 @@ project(main LANGUAGES CXX)
 #add_subdirectory(fmt)
 
 set(CMAKE_CXX_STANDARD 20)
-set(CMAKE_CXX_COMPILER "/usr/bin/g++-12")
+set(CMAKE_CXX_COMPILER "/usr/bin/g++")
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_BUILD_TYPE debug)
 
@@ -24,6 +24,9 @@ if (CMAKE_CXX_COMPILER_ID STREQUAL "GNU")
   add_compile_options(-std=c++2a -fmodules-ts)
 
   getstdmodule(iostream)
+  getstdmodule(string)
+  getstdmodule(cstring)
+  getstdmodule(charconv)
 
   add_library(m_module_impl OBJECT src/m_module_impl.cc)
   add_library(m_module STATIC $<TARGET_OBJECTS:m_module_impl> src/m_module.cc)

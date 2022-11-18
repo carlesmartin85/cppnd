@@ -1,51 +1,36 @@
 import <iostream>;
-using namespace std;
-
-class Data{
-	private:
-	int age=21;
-	public:
-	int id=54;
-};
-
- 
-class A {
-private:
-    int x;
-    int y;
-};
 
 import mainmodule;
 
 int main(){
 	int *y; //pointer variable
-	Data* x{new Data}; //object x
+	ptt::Data* x{new ptt::Data}; //object x
 	int z; //local variable of main
 	
 	y = (int*)x;
 
-	cout << "Private value of age is: " << *(y++) << endl; //output is 21
-	cout << "Public value of id is: " << *(y++) << endl; //output is 54
-	cout << "Public value of id is: " << x->id << endl; //output is 54
+	std::cout << "Private value of age is: " << *(y++) << std::endl; //output is 21
+	std::cout << "Public value of id is: " << *(y++) << std::endl; //output is 54
+	std::cout << "Public value of id is: " << x->id << std::endl; //output is 54
 
-	A a;
+	ptt::A a;
     int* p = (int*)&a;
-	cout << p << endl;
-	cout << *p << endl;
+	std::cout << p << std::endl;
+	std::cout << *p << std::endl;
     *p = 3;
-	cout << p << endl;
-	cout << *p << endl;
+	std::cout << p << std::endl;
+	std::cout << *p << std::endl;
     p++;
-	cout << p << endl;
-	cout << *p << endl;
+	std::cout << p << std::endl;
+	std::cout << *p << std::endl;
     *p = 9;
-	cout << p << endl;
-	cout << *p << endl;
+	std::cout << p << std::endl;
+	std::cout << *p << std::endl;
     p--;
-	cout << p << endl;
-	cout << *p << endl;
-    cout << "x = " << *p << endl;
+	std::cout << p << std::endl;
+	std::cout << *p << std::endl;
+    std::cout << "x = " << *p << std::endl;
     p++;
-    cout << "y = " << *p << endl;
+    std::cout << "y = " << *p << std::endl;
     return 0;
 }
