@@ -8,23 +8,18 @@ struct MyArray{
 };
 
 struct data{
-    constexpr std::size_t get_double_len() const{
-        return len*2;
-    }
-    std::size_t len;
+    constexpr static std::size_t get_double_len(){ return len*2; }
+    constexpr static std::size_t len{5};
 };
 
-//template <std::size_t Size>
-//constexpr MyArray<Size> create_array(data d){
-//    MyArray<d.get_double_len()> arr;
-//	return arr;
-//}
+constexpr auto create_array(data d) {
+    return MyArray<d.get_double_len()>();
+}
 
 int main(){
+	//MyArray<data{5}.get_double_len()> arr;
+	//return arr.data_[5];
 
-	MyArray<data{5}.get_double_len()> arr;
-	return arr.data_[5];
-
-	//auto arr_ = create_array(data{5});
-    //return arr.data_[5];
+    constexpr auto arr = create_array(data{});
+    return arr.data_[5];
 }
