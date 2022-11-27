@@ -1,0 +1,3 @@
+/home/cmartin/cppnd/34/build/CMakeFiles/main.dir
+/home/cmartin/cppnd/34/build/CMakeFiles/edit_cache.dir
+/home/cmartin/cppnd/34/build/CMakeFiles/rebuild_cache.dir
