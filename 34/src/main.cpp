@@ -13,7 +13,7 @@ public:
         }
     };
     ~Fibonacci(){};
-    bool quest(){
+    constexpr static bool quest(){
         if(cnt < 3){
             switch (cnt){
             case 2:
@@ -52,7 +52,7 @@ public:
         }
     };
     ~Get(){};
-    bool quest(){
+    constexpr static bool quest(){
         if(cnt < 1){
             std::cout << "The prime number is " << primes.back() << std::endl;
             return false;
@@ -84,6 +84,6 @@ public:
 }
 
 int main(){
-    Sequences::Fibonacci<40'000>();
-    PrimeNumber::Get<40'000>();
+    constexpr Sequences::Fibonacci<40'000>();
+    //PrimeNumber::Get<40'000>();
 }

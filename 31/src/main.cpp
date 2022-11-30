@@ -1,6 +1,5 @@
-import <iostream>;
-
-import mainmodule;
+#include <iostream>
+#include <memory>
 
 template <std::size_t Size>
 struct MyArray{
@@ -9,7 +8,19 @@ struct MyArray{
 
 struct data{
     static constexpr std::size_t get_double_len() {return len*2;}
-    std::size_t len;
+
+    data(std::size_t val){
+        len_ = len.allocate(1);
+        if (std::is_constant_evaluated()){std::construct_at(&len_[0]);}
+        len_[0] = val;
+    }
+
+    void deallocate(){
+        len_.deallocate(len_, 1);
+    }
+
+    std::size_t* len_;
+    static constexpr std::allocator<std::size_t> len;
 };
 
 constexpr auto create_array( data d ) noexcept {
