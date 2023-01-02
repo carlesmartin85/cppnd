@@ -178,7 +178,7 @@ public:
     }
 };
 
-// Shared-copying policy (unique_ptr)...
+// Shared-copying policy...
 template<typename T>
 class shared : public def<T> {
     using def<T>::log;
