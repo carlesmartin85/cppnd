@@ -13,7 +13,7 @@ public:
         }
     };
     ~Fibonacci(){};
-    constexpr static bool quest(){
+    bool quest(){
         if(cnt < 3){
             switch (cnt){
             case 2:
@@ -52,7 +52,7 @@ public:
         }
     };
     ~Get(){};
-    constexpr static bool quest(){
+    bool quest(){
         if(cnt < 1){
             std::cout << "The prime number is " << primes.back() << std::endl;
             return false;
